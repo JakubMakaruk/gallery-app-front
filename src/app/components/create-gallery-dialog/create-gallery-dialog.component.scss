@@ -1,0 +1,14 @@
+.create-gallery-dialog {
+  &__input-field {
+    padding-bottom: 0;
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  &__action-buttons {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

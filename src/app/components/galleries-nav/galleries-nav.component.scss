@@ -1,0 +1,53 @@
+@import '../../../vars';
+
+.galleries-nav {
+  width: 100%;
+
+  &__element {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: $secondary-text-color;
+    padding-left: $primary-space * 5;
+    transition: background-color .3s ease;
+
+    &--clickable {
+      cursor: pointer;
+      &:hover {
+        background-color: $side-nav-third-color;
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    color: $primary-text-color;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 $primary-space * 3;
+
+    &__btn-create-gallery {
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: $primary-text-color;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 2px solid $upload-button-first-color;
+      transition: background-color .3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $upload-button-secondary-color;
+      }
+
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+}

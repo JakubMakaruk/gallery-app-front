@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>CREATE GALLERY</h1>
+<div mat-dialog-content class="create-gallery-dialog__input-field">
+  <mat-form-field appearance="fill">
+    <mat-label>Type name of gallery...</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="create-gallery-dialog__action-buttons">
+  <button mat-button (click)="onBackClick()">Back</button>
+  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button>
+</div>

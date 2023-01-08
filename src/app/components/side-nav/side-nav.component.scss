@@ -1,0 +1,30 @@
+@import '../../../vars';
+
+.side-nav {
+  padding-top: 40px;
+  height: 100%;
+  width: 300px;
+  //padding: 60px 0;
+  background-color: $side-nav-first-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__divider {
+    height: 2px;
+    width: 100%;
+    background-color: $divider-color;
+  }
+
+  &__center-panel {
+    flex-basis: 100%;
+    width: 100%;
+    background-color: $side-nav-secondary-color;
+  }
+
+  &__footer {
+    width: 100%;
+    justify-self: end;
+  }
+}

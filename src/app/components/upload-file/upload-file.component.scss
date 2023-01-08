@@ -1,0 +1,27 @@
+@import '../../../vars';
+
+
+.upload-file {
+  width: 140px;
+  margin: 40px;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    display: block;
+    position: relative;
+    padding: 10px 0;
+    border-radius: 8px;
+    background-color: $upload-button-first-color;
+    color: $primary-text-color;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .3s ease;
+
+    &:hover {
+      background-color: $upload-button-secondary-color;
+    }
+  }
+}
