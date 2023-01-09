@@ -4,6 +4,7 @@
   width: 100%;
 
   &__element {
+    position: relative;
     height: 50px;
     width: 100%;
     display: flex;
@@ -13,9 +14,14 @@
     transition: background-color .3s ease;
 
     &--clickable {
-      cursor: pointer;
+      text-decoration: none;
       &:hover {
         background-color: $side-nav-third-color;
+
+        .galleries-nav__header__btn-delete-gallery {
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
   }
@@ -49,5 +55,31 @@
         font-size: 14px;
       }
     }
+
+    &__btn-delete-gallery {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      height: 30px;
+      width: 30px;
+      font-size: 16px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      color: $delete-button-first-color;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: color .3s ease, visibility .3s ease, opacity .3s ease;
+
+      &:hover {
+        color: $delete-button-secondary-color;
+      }
+    }
   }
+}
+
+.active {
+  background-color: $side-nav-third-color;
 }

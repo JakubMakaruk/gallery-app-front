@@ -17,6 +17,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import { ImagesViewComponent } from './components/images-view/images-view.component';
+import { ImageCardComponent } from './components/image-card/image-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {FormsModule} from "@angular/forms";
     UploadFileComponent,
     GalleriesNavComponent,
     CopyrightPanelComponent,
-    CreateGalleryDialogComponent
+    CreateGalleryDialogComponent,
+    ImagesViewComponent,
+    ImageCardComponent
   ],
     imports: [
         BrowserModule,

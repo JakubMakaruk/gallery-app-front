@@ -6,13 +6,13 @@
       <i class="fa-solid fa-plus"></i>
     </button>
   </div>
-  <div class="galleries-nav__element galleries-nav__element--clickable">
-    <p>Moja pierwsza Galeria</p>
-  </div>
-  <div class="galleries-nav__element galleries-nav__element--clickable">
-    <p>Moja druga Galeria</p>
-  </div>
-  <div class="galleries-nav__element galleries-nav__element--clickable">
-    <p>Trzecia Galeria</p>
-  </div>
+  <a *ngFor="let gallery of galleries"
+       class="galleries-nav__element galleries-nav__element--clickable"
+       [routerLink]="['/galleries', gallery.id]"
+       [routerLinkActive]="'active'">
+    <p>{{ gallery.name }}</p>
+    <button class="galleries-nav__header__btn-delete-gallery">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  </a>
 </div>
