@@ -9,14 +9,16 @@ import {DomSanitizer} from "@angular/platform-browser";
   templateUrl: './images-view.component.html',
   styleUrls: ['./images-view.component.scss']
 })
-export class ImagesViewComponent {
+export class ImagesViewComponent implements OnInit {
 
   currentGalleryId: string = '';
   images: any = [];
 
   constructor(private galleryService: GalleryService,
-              private route: ActivatedRoute,
-              private sanitizer: DomSanitizer) {
+              private route: ActivatedRoute) {
+  }
+
+  ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.currentGalleryId = params['galleryId'];
       this.initImages(this.currentGalleryId);

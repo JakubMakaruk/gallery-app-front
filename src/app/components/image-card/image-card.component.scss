@@ -1,17 +1,47 @@
+@import '../../../vars';
+
 .image-card {
   margin: 20px;
   width: 300px;
   height: 200px;
+  position: relative;
+
+  &:hover {
+    .image-card--overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+    .image-card--zoom {
+      background-size: 150%;
+    }
+  }
+
+  &--overlay {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: $primary-space;
+    background-color: rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: visibility .3s ease, opacity .3s ease;
+
+    &__icon {
+      font-size: 40px;
+      color: $primary-text-color
+    }
+  }
 
   &--zoom {
     width: 100%;
     height: 100%;
+    border-radius: $primary-space;
     background-size: 100%;
     background-position: center;
     transition: all .3s ease;
-
-    &:hover {
-      background-size: 150%;
-    }
   }
 }

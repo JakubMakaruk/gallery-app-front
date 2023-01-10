@@ -3,7 +3,7 @@
          type="file"
          class="upload-file__input"
          name="image"
-         multiple>
+         (change)="onFileSelected($event)">
   <label for="fileInput"
          class="upload-file__label">UPLOAD</label>
 </div>

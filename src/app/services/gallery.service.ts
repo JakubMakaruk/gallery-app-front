@@ -19,4 +19,8 @@ export class GalleryService {
   getImages(galleryId: string) {
     return this.webReqService.get(`galleries/${galleryId}/images`);
   }
+
+  uploadImage(galleryId: string, formData: FormData) {
+    return this.webReqService.post(`galleries/${galleryId}/upload`, formData);
+  }
 }
