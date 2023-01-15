@@ -8,7 +8,6 @@ import {ActivatedRoute, Params} from "@angular/router";
   styleUrls: ['./upload-file.component.scss']
 })
 export class UploadFileComponent implements OnInit {
-
   currentGalleryId: string = '';
 
   constructor(private _galleryService: GalleryService,
@@ -28,7 +27,7 @@ export class UploadFileComponent implements OnInit {
     formData.append('image', file);
 
     this._galleryService.uploadImage(this.currentGalleryId, formData).subscribe((req) => {
-      console.log(req);
+      this._galleryService.uploadImagePing.next();
     })
   }
 }

@@ -1,5 +1,6 @@
 <div class="images-view">
   <app-image-card  *ngFor="let image of images"
-    [src]="image">
+    [src]="image"
+    (eventPreviewImage)="showImageSlider($event)">
   </app-image-card>
 </div>

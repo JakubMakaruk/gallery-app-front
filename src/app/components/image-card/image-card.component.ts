@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {ImageModel} from "../../models/image.model";
 
 @Component({
   selector: 'app-image-card',
@@ -10,7 +11,7 @@ export class ImageCardComponent {
 
   resolvedSrc: SafeUrl = '';
   imageSrc: any = null;
-  image: any = null;
+  image!: ImageModel;
 
   @Input() set src(image: any) {
     this.image = image;
@@ -18,11 +19,17 @@ export class ImageCardComponent {
     this.imageSrc = this.domSanitizer.bypassSecurityTrustStyle(`url(${this.resolvedSrc})`)
   }
 
+  @Output() eventPreviewImage = new EventEmitter<ImageModel>()
+
   constructor(private domSanitizer: DomSanitizer) {
   }
 
 
   getImageUrl() {
     return `url(`
+  }
+
+  onPreviewImage() {
+    this.eventPreviewImage.emit(this.image);
   }
 }

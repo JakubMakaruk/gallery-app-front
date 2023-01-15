@@ -3,7 +3,8 @@ import {GalleryService} from "../../services/gallery.service";
 import {MatDialog} from "@angular/material/dialog";
 import {CreateGalleryDialogComponent} from "../create-gallery-dialog/create-gallery-dialog.component";
 import {GalleryModel} from "../../models/gallery.model";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ConfirmDialogComponent} from "../confirm-dialog/confirm-dialog.component";
+import {noop} from "rxjs";
 
 @Component({
   selector: 'app-galleries-nav',
@@ -15,7 +16,7 @@ export class GalleriesNavComponent implements OnInit{
   galleries: any[] = [];
   images: any[] = [];
 
-  constructor(private galleryService: GalleryService,
+  constructor(private _galleryService: GalleryService,
               private dialog: MatDialog) {
   }
 
@@ -24,7 +25,8 @@ export class GalleriesNavComponent implements OnInit{
   }
 
   initGalleries() {
-    this.galleryService.getGalleries().subscribe((galleries: any) => {
+    this._galleryService.getGalleries().subscribe((galleries: any) => {
+      console.log('reload elementów')
       this.galleries = galleries.map((gallery: any) => new GalleryModel(gallery));
     });
   }
@@ -37,10 +39,23 @@ export class GalleriesNavComponent implements OnInit{
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.galleryService.createGallery(result).subscribe((res) => this.initGalleries())
+        this._galleryService.createGallery(result).subscribe((res) => this.initGalleries())
       }
     })
 
   }
 
+  deleteGallery(event: any, galleryId: string) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {confirm: false}
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this._galleryService.deleteGallery(galleryId).subscribe(() => this.initGalleries());
+      }
+    })
+  }
 }

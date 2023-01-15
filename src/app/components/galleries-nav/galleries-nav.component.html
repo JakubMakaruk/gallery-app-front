@@ -10,8 +10,9 @@
        class="galleries-nav__element galleries-nav__element--clickable"
        [routerLink]="['/galleries', gallery.id]"
        [routerLinkActive]="'active'">
-    <p>{{ gallery.name }}</p>
-    <button class="galleries-nav__header__btn-delete-gallery">
+    <p class="galleries-nav__header__name">{{ gallery.name }}</p>
+    <button class="galleries-nav__header__btn-delete-gallery"
+          (click)="deleteGallery($event, gallery.id)">
       <i class="fa-solid fa-trash"></i>
     </button>
   </a>

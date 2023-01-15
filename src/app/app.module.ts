@@ -19,6 +19,9 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import { ImagesViewComponent } from './components/images-view/images-view.component';
 import { ImageCardComponent } from './components/image-card/image-card.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { ImageCardComponent } from './components/image-card/image-card.component
     CopyrightPanelComponent,
     CreateGalleryDialogComponent,
     ImagesViewComponent,
-    ImageCardComponent
+    ImageCardComponent,
+    ImageSliderComponent,
+    ConfirmDialogComponent
   ],
     imports: [
         BrowserModule,
@@ -42,7 +47,8 @@ import { ImageCardComponent } from './components/image-card/image-card.component
         MatDialogModule,
         MatButtonModule,
         MatInputModule,
-        FormsModule
+        FormsModule,
+        MatMenuModule
     ],
   providers: [
   ],
