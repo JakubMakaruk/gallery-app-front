@@ -1,0 +1,32 @@
+<div class="image-slider">
+  <button class="image-slider__controls image-slider__controls--info"
+          [matMenuTriggerFor]="infoPanel">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </button>
+  <mat-menu class="image-slider__info-panel" #infoPanel="matMenu">
+    <p><span class="image-slider__info-panel__property">Original filename:</span> {{ data.images[currentIndex].originalFilename }}</p>
+    <p><span class="image-slider__info-panel__property">Current filename:</span> {{ data.images[currentIndex].filename }}</p>
+    <p><span class="image-slider__info-panel__property">Content type:</span> {{ data.images[currentIndex].contentType }}</p>
+    <p><span class="image-slider__info-panel__property">Path:</span> {{ data.images[currentIndex].path }}</p>
+    <button class="image-slider__info-panel__delete"
+          (click)="deleteImage()">DELETE IMAGE</button>
+  </mat-menu>
+  <div class="image-slider__header">
+    <span class="image-slider__header__count">{{ this.currentIndex + 1 }}/{{ data.images.length }}</span>
+  </div>
+  <button class="image-slider__controls image-slider__controls--close"
+      (click)="closeDialog()">
+    <i class="fa-solid fa-x"></i>
+  </button>
+  <div class="image-slider__content">
+    <button class="image-slider__controls image-slider__controls--back"
+      (click)="onPrevious()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <img [src]="data.images[currentIndex].sanitizeUrl">
+    <button class="image-slider__controls image-slider__controls--next"
+      (click)="onNext()">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
