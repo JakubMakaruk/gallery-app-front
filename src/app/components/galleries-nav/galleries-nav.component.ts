@@ -4,7 +4,6 @@ import {MatDialog} from "@angular/material/dialog";
 import {CreateGalleryDialogComponent} from "../create-gallery-dialog/create-gallery-dialog.component";
 import {GalleryModel} from "../../models/gallery.model";
 import {ConfirmDialogComponent} from "../confirm-dialog/confirm-dialog.component";
-import {noop} from "rxjs";
 
 @Component({
   selector: 'app-galleries-nav',

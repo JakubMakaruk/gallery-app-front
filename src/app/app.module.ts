@@ -22,6 +22,7 @@ import { ImageCardComponent } from './components/image-card/image-card.component
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatMenuModule} from "@angular/material/menu";
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatMenuModule} from "@angular/material/menu";
     ImagesViewComponent,
     ImageCardComponent,
     ImageSliderComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    LoginPageComponent
   ],
     imports: [
         BrowserModule,
