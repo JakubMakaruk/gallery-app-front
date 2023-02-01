@@ -11,9 +11,6 @@
     <button class="image-slider__info-panel__delete"
           (click)="deleteImage()">DELETE IMAGE</button>
   </mat-menu>
-  <div class="image-slider__header">
-    <span class="image-slider__header__count">{{ this.currentIndex + 1 }}/{{ data.images.length }}</span>
-  </div>
   <button class="image-slider__controls image-slider__controls--close"
       (click)="closeDialog()">
     <i class="fa-solid fa-x"></i>

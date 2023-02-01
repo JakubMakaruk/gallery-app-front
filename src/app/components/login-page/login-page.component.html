@@ -2,11 +2,12 @@
   <div class="login-box">
     <h1 class="login-box__header">LOGIN PANEL</h1>
     <div class="login-box__field">
-      <input class="login-box__field-input" type="email" placeholder="Email">
+      <input #emailInput class="login-box__field-input" type="email" placeholder="Email">
     </div>
     <div class="login-box__field">
-      <input class="login-box__field-input" type="password" placeholder="Password">
+      <input #passwordInput class="login-box__field-input" type="password" placeholder="Password">
     </div>
-    <button class="login-box__submit-btn">SUBMIT</button>
+    <a class="login-box__create-account" [routerLink]="['/signup']">Don't have account? Sign up!</a>
+    <button class="login-box__submit-btn" (click)="onLoginButtonClick(emailInput.value, passwordInput.value)">SUBMIT</button>
   </div>
 </div>

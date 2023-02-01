@@ -5,11 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GalleryViewComponent } from './components/gallery-view/gallery-view.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { GalleriesNavComponent } from './components/galleries-nav/galleries-nav.component';
 import { CopyrightPanelComponent } from './components/copyright-panel/copyright-panel.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { CreateGalleryDialogComponent } from './components/create-gallery-dialog/create-gallery-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -23,13 +22,15 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import {WebReqInterceptorService} from "./services/web-req-interceptor.service";
+import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryViewComponent,
     SideNavComponent,
-    UserDetailsComponent,
     UploadFileComponent,
     GalleriesNavComponent,
     CopyrightPanelComponent,
@@ -38,21 +39,24 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     ImageCardComponent,
     ImageSliderComponent,
     ConfirmDialogComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    SignupPageComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatInputModule,
-        FormsModule,
-        MatMenuModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    MatMenuModule,
+    MatIconModule
+  ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]
 })

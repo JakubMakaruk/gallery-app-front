@@ -1,7 +1,12 @@
 <div class="side-nav">
   <div class="side-nav__header-panel">
-    <div class="side-nav__header-panel__user-details">
-      <app-user-details></app-user-details>
+    <button class="side-nav__header-panel__logout-btn" (click)="onLogoutButtonClick()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+
+    <div class="side-nav__header-panel__details">
+      <h1>GALLERY APP</h1>
+      <h4>by Jakub Makaruk</h4>
     </div>
 
     <div class="side-nav__header-panel__upload">

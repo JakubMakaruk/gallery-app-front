@@ -1,6 +1,6 @@
 @import '../../../vars.scss';
 
-.login-page {
+.signup-page {
   height: 100%;
   width: 100%;
   background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(30,30,30,1) 35%, rgba(44,44,44,1) 100%);
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.login-box {
+.signup-box {
   display: flex;
   flex-direction: column;
   border-radius: $primary-space * 2;
@@ -40,7 +40,7 @@
     }
   }
 
-  &__create-account {
+  &__back-login {
     margin-top: 10px;
     text-align: center;
     font-size: 12px;

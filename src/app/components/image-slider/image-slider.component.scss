@@ -17,6 +17,7 @@
 
     p {
       margin: $primary-space 0;
+      word-break: break-all;
     }
 
     &__property {
@@ -73,8 +74,8 @@
 
   }
   &__controls {
-    min-width: 60px;
-    min-height: 60px;
+    min-width: 40px;
+    min-height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +88,7 @@
     outline: none;
     border:none;
 
-    font-size: 40px;
+    font-size: 30px;
     color: $primary-text-color;
     transition: background-color .3s ease;
 

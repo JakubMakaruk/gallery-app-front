@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
+import {HttpResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-side-nav',
@@ -7,7 +10,10 @@ import { Component } from '@angular/core';
 })
 export class SideNavComponent {
 
-  onUpload() {
+  constructor(private authService: AuthService) {
+  }
 
+  onLogoutButtonClick() {
+    this.authService.logout();
   }
 }

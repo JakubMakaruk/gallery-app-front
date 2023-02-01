@@ -1,0 +1,13 @@
+<div class="signup-page">
+  <div class="signup-box">
+    <h1 class="signup-box__header">SIGN UP PANEL</h1>
+    <div class="signup-box__field">
+      <input #emailInput class="signup-box__field-input" type="email" placeholder="Email">
+    </div>
+    <div class="signup-box__field">
+      <input #passwordInput class="signup-box__field-input" type="password" placeholder="Password">
+    </div>
+    <a class="signup-box__back-login" [routerLink]="['/login']">Back to login page</a>
+    <button class="signup-box__submit-btn" (click)="onSignUpButtonClick(emailInput.value, passwordInput.value)">SIGN UP</button>
+  </div>
+</div>
